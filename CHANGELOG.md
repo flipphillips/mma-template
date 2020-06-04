@@ -4,7 +4,7 @@
 
 ![logo](icon.png)
 
-This changelog serves the dual purpose of being a changelog for the template and as a template for your changelog. 
+This changelog serves the dual purpose of being a changelog for the template and as a template for your changelog.
 
 ## Types of changes
 
@@ -13,7 +13,7 @@ This changelog serves the dual purpose of being a changelog for the template and
 - `Deprecated` for soon-to-be removed features.
 - `Removed` for now removed features.
 - `Fixed` for any bug fixes.
-- `Security` in case of vulnerabilities. 
+- `Security` in case of vulnerabilities.
 
 ***
 
