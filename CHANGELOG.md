@@ -27,6 +27,6 @@ About all these changes and tags.
 
 ***
 
-## [0.1.0] - 2020-05-28
+## [0.0.0] - 2020-05-28
 
 First commit

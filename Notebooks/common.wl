@@ -5,144 +5,49 @@
 
 
 (* ::Text:: *)
-(*This stuff is common across all the experiments, since they are based on the sinha simulations / stimuli*)
+(*This stuff is common across all projects. Things like IO tools, parsers, etc.*)
 
 
 (* ::Section:: *)
-(*labels*)
-
-
-(* ::Text:: *)
-(*'LUT' things transfer from something to array indexes*)
-
-
-(* ::Text:: *)
-(*labels x {gray,color,burred gray} x {patch sizes - 1,2,3,4,5,6,8,9,10,12,15,20,25,30,40,60} x target exemplar x codebook exemplar*)
+(*colors*)
 
 
 (* ::Subsubsection:: *)
-(*patch sizes*)
+(*our colors*)
 
 
 (* ::Text:: *)
-(*Self evident*)
+(*This forces loading of the paclet*)
 
 
-patchSizes = {1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 20, 25, 30, 40, 60};
+ColorData[1];
 
 
-(* ::Text:: *)
-(*From actual patch size to array index*)
+AppendTo[DataPaclets`ColorDataDump`colorSchemes,
+	{{"VV","vv",{"Default plot colors from Plot for VV"}},
+	{"Indexed"},1,{1,10,1},{RGBColor[{0.396078431372549, 0.5058823529411764, 0.6941176470588235}],RGBColor[{0.8431372549019608, 0.6196078431372549, 0.2549019607843137}],RGBColor[{0.5843137254901961, 0.6823529411764706, 0.2823529411764706}],RGBColor[{0.8627450980392157, 0.4156862745098039, 0.2627450980392157}],RGBColor[{0.5176470588235293, 0.4745098039215686, 0.6862745098039216}],RGBColor[{0.7294117647058823, 0.447059, 0.192157}],RGBColor[{0.4196078431372549, 0.615686274509804, 0.7686274509803921}],RGBColor[{0.9647058823529412, 0.7568627450980392, 0.2588235294117647}],RGBColor[{0.611764705882353, 0.396078431372549, 0.6}],RGBColor[{0.5764705882352941, 0.5843137254901961, 0.1803921568627451}]},
+	{"Indexed","VV"}}];
 
 
-patchSizeLUT = Association[Thread[Rule[patchSizes, Range[Length[patchSizes]]]]]
+AppendTo[DataPaclets`ColorDataDump`colorSchemeNames,"VV"];
 
 
-(* ::Subsubsection:: *)
-(*image types*)
-
-
-imageTypes = {"b&w", "color", "blurred"};
-
-
-imageTypeLUT = Association[Thread[Rule[imageTypes, Range[3]]]]
-
-
-(* ::Subsubsection:: *)
-(*category names*)
-
-
-(* ::Text:: *)
-(*Google network image categories.*)
-
-
-netCategories=First[StringSplit[#,","]]&/@Import[FileNameJoin[{$analysesdir,"googlenetCategories.dat"}],"List"];
-
-
-(* ::Text:: *)
-(*From google categories to index in google-space*)
-
-
-netCategoryLUT=Association[Thread[Rule[netCategories,Range[Length[netCategories]]]]];
-
-
-(* ::Text:: *)
-(*The categories we used *)
-
-
-pawanCategories=FileBaseName/@FileNames[FileNameJoin[{$experimentdir,"good_exemplars","*.jpg"}]]
-
-
-(* ::Text:: *)
-(*Categories we used 'normalized' to the google category names*)
-
-
-imageCategories={"acorn","brown bear","bolete","burrito","monarch","Siamese cat","cauliflower","daisy","golden retriever","geyser","great grey owl","pineapple","pomegranate","scuba diver","sewing machine","space shuttle","tractor","traffic light","violin","volcano"};
-
-
-(* ::Text:: *)
-(*From our category name to imagenet ID*)
-
-
-imageNetLUT=Association[Thread[Rule[pawanCategories,Flatten[Position[netCategories,#]&/@imageCategories]]]]
-
-
-(* ::Text:: *)
-(*From our category name to array index*)
-
-
-pawanLUT=Association[Thread[Rule[pawanCategories,Range[20]]]]
-
-
-(* ::Text:: *)
-(*Translation from our ID to imagenet ID*)
-
-
-pawanToImageNet=Association[Thread[Rule[Values[pawanLUT],Values[imageNetLUT]]]]
-
-
-(* ::Text:: *)
-(*Imagenet ID to our ID*)
-
-
-imageNetToPawan=Association[Thread[Rule[Values[imageNetLUT],Values[pawanLUT]]]]
-
-
-(* ::Text:: *)
-(*This doesn't belong here...*)
-
-
-(* ::Input:: *)
-(*pilotImages={"bear","burrito","cat","cauliflower","dog","trafficlight","violin","volcano","acorn","bolete","cat","dog","pineapple","shuttle","trafficlight","violin"};*)
-
-
-(* ::Input:: *)
-(*pilotCategories=imageNetLUT/@pilotImages*)
-
-
-(* ::Input:: *)
-(*pilotStimuli={"bear_sewingmachine","burrito_scuba","cat_sewingmachine","cauliflower_scuba","dog_tractor","trafficlight_pomegranate","violin_cauliflower","volcano_cauliflower","acorn_butterfly","cat_volcano","dog_volcano","trafficlight_pineapple","bolete_owl","pineapple_burrito","shuttle_acorn","violin_bolete"};*)
+vvPalRGB={RGBColor[{0.396078431372549, 0.5058823529411764, 0.6941176470588235}],RGBColor[{0.8431372549019608, 0.6196078431372549, 0.2549019607843137}],RGBColor[{0.5843137254901961, 0.6823529411764706, 0.2823529411764706}],RGBColor[{0.8627450980392157, 0.4156862745098039, 0.2627450980392157}],RGBColor[{0.5176470588235293, 0.4745098039215686, 0.6862745098039216}],RGBColor[{0.7294117647058823, 0.447059, 0.192157}],RGBColor[{0.4196078431372549, 0.615686274509804, 0.7686274509803921}],RGBColor[{0.9647058823529412, 0.7568627450980392, 0.2588235294117647}],RGBColor[{0.611764705882353, 0.396078431372549, 0.6}],RGBColor[{0.5764705882352941, 0.5843137254901961, 0.1803921568627451}]};
+vvPalLAB={LABColor[0.5327413504005303, -0.00569390830596983, -0.2896298266934716],LABColor[0.6943507557245971, 0.153866, 0.5526446949562734],LABColor[0.6759333640956692, -0.202654, 0.4801872260905736],LABColor[0.5859940537454338, 0.436219, 0.4330577029667748],LABColor[0.5342717665256584, 0.133231, -0.2733955124843652],LABColor[0.5525159120803818, 0.252847, 0.469403],LABColor[0.6232833627405087, -0.09330423563408241, -0.25769],LABColor[0.8132746127025804, 0.108872, 0.6768322577023566],LABColor[0.5028385556098182, 0.2910293149217752, -0.1909797020874453],LABColor[0.6007167521681873, -0.104014, 0.5118454429758649]};
 
 
 (* ::Section:: *)
-(*criteria tools*)
+(*path tools*)
 
 
 (* ::Text:: *)
-(*Most likely object, by box size. returns {box size, probability, and item}.*)
-(*Works w/ names and IDs. (a->target, b->codebook)*)
+(*Things for path parsing*)
 
 
-(* ::Input:: *)
-(*maxByBoxSize[a_Integer,b_Integer,mode_Integer:1]:=Module[{ms,s},*)
-(*s=scores[[All,mode,All,a,b]];*)
-(*MapIndexed[{patchSizes[[First[#2]]], ms=Max[#1],FirstPosition[#1,ms][[1]]}&,Transpose[s]]]*)
+fileName[path_]:=Last[FileNameSplit[path]]
 
 
-(* ::Input:: *)
-(*maxByBoxSize[a_String,b_String,mode_String:"b&w"]:=*)
-(*MapAt[netCategories[[#]]&,maxByBoxSize[pawanLUT[a],pawanLUT[b],imageTypeLUT[mode]],{All,3}]*)
+fileHead[path_]:=First[StringSplit[fileName[path],"."]]
 
 
-(* ::Input:: *)
-(*maxByBoxSize["dog","dog","color"]*)
+fileType[path_]:=Last[StringSplit[fileName[path],"."]]
