@@ -3,33 +3,33 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 11.1' *)
+(* CreatedBy='Mathematica 12.1' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6696,        183]
-NotebookOptionsPosition[      4312,        128]
-NotebookOutlinePosition[      5716,        166]
-CellTagsIndexPosition[      5673,        163]
+NotebookDataLength[      6727,        178]
+NotebookOptionsPosition[      4346,        124]
+NotebookOutlinePosition[      5752,        162]
+CellTagsIndexPosition[      5709,        159]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Notebook", "Title",
+Cell["VQ", "Title",
  CellChangeTimes->{{3.799668329973474*^9, 3.799668330290676*^9}, {
-  3.799972013513007*^9, 
-  3.799972014707383*^9}},ExpressionUUID->"2bdc2d95-4591-4836-a65b-\
+  3.799972013513007*^9, 3.799972014707383*^9}, {3.800271110892304*^9, 
+  3.800271111148385*^9}},ExpressionUUID->"2bdc2d95-4591-4836-a65b-\
 b5bbbe158aa0"],
 
-Cell["Stuff goes in here ", "Text",
+Cell["Starting point for VQ dumps, etc.", "Text",
  CellChangeTimes->{{3.799668470222538*^9, 3.799668484429587*^9}, {
-  3.8002715707649384`*^9, 
-  3.800271574805222*^9}},ExpressionUUID->"0acf1e34-556f-4c23-9a2a-\
+  3.800271116970944*^9, 
+  3.800271129913602*^9}},ExpressionUUID->"0acf1e34-556f-4c23-9a2a-\
 3f85e682c9ec"],
 
 Cell[BoxData["Quit"], "Input",
@@ -38,9 +38,10 @@ Cell[BoxData["Quit"], "Input",
 
 Cell[CellGroupData[{
 
-Cell["Starters", "Section",
- CellChangeTimes->{{3.703622684002537*^9, 
-  3.703622686138381*^9}},ExpressionUUID->"267e3d14-ebf1-4d0c-86d7-\
+Cell["Init", "Section",
+ CellChangeTimes->{{3.703622684002537*^9, 3.703622686138381*^9}, {
+  3.800271608025442*^9, 
+  3.800271608416644*^9}},ExpressionUUID->"267e3d14-ebf1-4d0c-86d7-\
 0cbb9c23d00c"],
 
 Cell["\<\
@@ -71,16 +72,15 @@ Cell[BoxData[{
    3.700822079895486*^9, 3.700822087300159*^9}, {3.7008375680019836`*^9, 
    3.700837568094639*^9}, {3.703622562094449*^9, 3.70362256219746*^9}, 
    3.7996683428728657`*^9, {3.799669095450383*^9, 3.799669126336637*^9}, {
-   3.800269954305904*^9, 
-   3.8002699597683573`*^9}},ExpressionUUID->"daa50ebb-ab42-41a7-8412-\
-2b1d848263d9"],
+   3.800269954305904*^9, 3.8002699597683573`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"daa50ebb-ab42-41a7-8412-2b1d848263d9"],
 
 Cell[CellGroupData[{
 
 Cell["Notes", "Subsubsection",
  CellChangeTimes->{{3.800271501088736*^9, 
-  3.800271501644088*^9}},ExpressionUUID->"d2038da2-795d-42a8-9b2c-\
-8f297762812e"],
+  3.800271501644088*^9}},ExpressionUUID->"53c15fc6-4301-4f7b-9e20-\
+013698e28160"],
 
 Cell["\<\
 The above assumes:
@@ -107,27 +107,23 @@ color map we used for the veiled virgin project
  InitializationCell->True,
  CellChangeTimes->{{3.800269985829405*^9, 3.8002700526345263`*^9}, {
   3.800271176196911*^9, 3.8002711818490667`*^9}, {3.800271219908986*^9, 
-  3.8002714828230133`*^9}},ExpressionUUID->"3948a187-1ae9-4896-bf65-\
-564354e72a65"]
-}, Open  ]]
+  3.8002714828230133`*^9}},ExpressionUUID->"bf7c8b59-8f4a-4a5a-b21d-\
+83cb4fbd8999"],
+
+Cell["", "Text",
+ InitializationCell->
+  True,ExpressionUUID->"96093da4-ac88-443e-974a-18c1ebec262e"]
+}, Closed]]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
-Cell["Go", "Section",
- CellChangeTimes->{{3.800271548447453*^9, 
-  3.800271548718995*^9}},ExpressionUUID->"3c361394-b409-4bef-a8c3-\
-756eaeea161e"],
-
-Cell["Here we go", "Text",
- CellChangeTimes->{{3.800271560431315*^9, 
-  3.800271561837419*^9}},ExpressionUUID->"6fdb18d4-daa6-4ddb-8e6a-\
-63ce67e7fc82"]
-}, Open  ]]
+Cell["Data ", "Section",
+ CellChangeTimes->{{3.8002716140625467`*^9, 
+  3.800271614769681*^9}},ExpressionUUID->"795fd77b-8f3b-4089-a1a3-\
+e1f6297d4237"]
 }, Open  ]]
 },
 WindowSize->{1091, 1003},
-WindowMargins->{{174, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, 175}, {-40, Automatic}},
 TaggingRules->{
  "DocuToolsSettings" -> {
    "$ApplicationName" -> "Shape", "$LinkBase" -> "Shape", 
@@ -166,26 +162,27 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 200, 4, 165, "Title",ExpressionUUID->"2bdc2d95-4591-4836-a65b-b5bbbe158aa0"],
-Cell[783, 28, 212, 4, 59, "Text",ExpressionUUID->"0acf1e34-556f-4c23-9a2a-3f85e682c9ec"],
-Cell[998, 34, 179, 2, 47, "Input",ExpressionUUID->"a0d8d33d-4fe1-4738-8847-20c27903c2c3"],
+Cell[580, 22, 240, 4, 165, "Title",ExpressionUUID->"2bdc2d95-4591-4836-a65b-b5bbbe158aa0"],
+Cell[823, 28, 224, 4, 59, "Text",ExpressionUUID->"0acf1e34-556f-4c23-9a2a-3f85e682c9ec"],
+Cell[1050, 34, 179, 2, 47, "Input",ExpressionUUID->"a0d8d33d-4fe1-4738-8847-20c27903c2c3"],
 Cell[CellGroupData[{
-Cell[1202, 40, 153, 3, 112, "Section",ExpressionUUID->"267e3d14-ebf1-4d0c-86d7-0cbb9c23d00c"],
-Cell[1358, 45, 283, 6, 99, "Text",ExpressionUUID->"cc53fac2-faf3-4083-a907-6877fe933db6"],
-Cell[1644, 53, 970, 22, 138, "Input",ExpressionUUID->"daa50ebb-ab42-41a7-8412-2b1d848263d9",
+Cell[1254, 40, 198, 4, 112, "Section",ExpressionUUID->"267e3d14-ebf1-4d0c-86d7-0cbb9c23d00c"],
+Cell[1455, 46, 283, 6, 99, "Text",ExpressionUUID->"cc53fac2-faf3-4083-a907-6877fe933db6"],
+Cell[1741, 54, 987, 21, 138, "Input",ExpressionUUID->"daa50ebb-ab42-41a7-8412-2b1d848263d9",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[2639, 79, 156, 3, 75, "Subsubsection",ExpressionUUID->"d2038da2-795d-42a8-9b2c-8f297762812e"],
-Cell[2798, 84, 1135, 26, 734, "Text",ExpressionUUID->"3948a187-1ae9-4896-bf65-564354e72a65",
+Cell[2753, 79, 156, 3, 75, "Subsubsection",ExpressionUUID->"53c15fc6-4301-4f7b-9e20-013698e28160"],
+Cell[2912, 84, 1135, 26, 734, "Text",ExpressionUUID->"bf7c8b59-8f4a-4a5a-b21d-83cb4fbd8999",
+ InitializationCell->True],
+Cell[4050, 112, 101, 2, 59, "Text",ExpressionUUID->"96093da4-ac88-443e-974a-18c1ebec262e",
  InitializationCell->True]
-}, Open  ]]
+}, Closed]]
 }, Open  ]],
-Cell[CellGroupData[{
-Cell[3982, 116, 147, 3, 112, "Section",ExpressionUUID->"3c361394-b409-4bef-a8c3-756eaeea161e"],
-Cell[4132, 121, 152, 3, 59, "Text",ExpressionUUID->"6fdb18d4-daa6-4ddb-8e6a-63ce67e7fc82"]
-}, Open  ]]
+Cell[4178, 118, 152, 3, 112, "Section",ExpressionUUID->"795fd77b-8f3b-4089-a1a3-e1f6297d4237"]
 }, Open  ]]
 }
 ]
 *)
+
+(* End of internal cache information *)
 

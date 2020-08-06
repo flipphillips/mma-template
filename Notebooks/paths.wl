@@ -5,7 +5,7 @@
 
 
 (* ::Code:: *)
-(*$projName = "VVX";*)
+(*$projName = "M1";*)
 (*Get[FileNameJoin[{NotebookDirectory[],"..","paths.wl"}]]*)
 
 

@@ -21,12 +21,12 @@ This changelog serves the dual purpose of being a changelog for the template and
 
 About all these changes and tags.
 
-### Added
+### Changed
 
-- First commit
+- Edited from template
 
 ***
 
 ## [0.0.0] - 2020-05-28
 
-First commit
+First commit from template.
