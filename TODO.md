@@ -1,7 +1,10 @@
 # To Do
 
-![icon](icon.png)
+![](icon.png)
 
+v 0.1.1
+
+Spring 21
 ## Priority
 
 - change 'experiment' to 'project' everywhere (see the dynamic organics project)
