@@ -19,8 +19,9 @@ This changelog serves the dual purpose of being a changelog for the template and
 
 ## [Unreleased changes]
 
-About all these changes and tags.
-
+## Changed
+- Moving paths around a little bit. There's still some left-over junk from the templates.
+- Documentation
 ### Added
 
 - First commit
